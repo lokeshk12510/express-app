@@ -9,11 +9,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 
-mongoose
-  .connect(
-    'mongodb+srv://loks:12510@cluster0.bymss.mongodb.net/express_db?retryWrites=true&w=majority'
-  )
-  .then(() => console.log('DB connected!'));
+mongoose.connect('').then(() => console.log('DB connected!'));
 
 app.get('/api/v1/', (req, res) => {
   res.send('Home page!');
